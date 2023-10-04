@@ -1,7 +1,9 @@
 "use client"
 import { IProduct } from '@/common/model/products';
+import Skeleton from '@/components/general/skeleton';
 import ProductCard from '@/components/product/card';
 import { useFetchData } from '@/hooks/useFetchData';
+import Link from 'next/link';
 import React from 'react';
 
 interface Props {
@@ -12,9 +14,7 @@ const Products: React.FC<Props> = ({ }) => {
   const { data: products, loading } = useFetchData<{ message: null, data: IProduct[] }>('/mehsullar')
   console.log(loading);
 
-  if (loading) {
-    return 'loading'
-  }
+
 
   return (
     <main>
@@ -30,9 +30,11 @@ const Products: React.FC<Props> = ({ }) => {
 
       <div className="container mx-auto my-[100px] ">
         <div className='flex  flex-wrap gap-[20px]'>
-          {products?.data?.map(item => (
+
+          {loading ? Array(8).fill(<div className='w-[369px]'><Skeleton /></div>) : products?.data?.map(item => (
             <div key={item.title} className='w-[369px]'>
-              <ProductCard  product={item} />
+              <Link href={'product/' + item.title}>
+                <ProductCard product={item} /></Link>
             </div>
           ))}
         </div>

@@ -6,10 +6,10 @@ import React, { useEffect, useState } from 'react';
 
 export const useFetchData = <T>(url: string) => {
     const [data, setData] = useState<T | null>(null)
-    const [loading, setloading] = useState(false)
+    const [loading, setloading] = useState(true)
     
     const fetchData = async () => {
-        setloading(true)
+     
         const data = await api.get<T>(url)
         if (data) {
             setData(data)
