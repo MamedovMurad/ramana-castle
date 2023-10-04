@@ -29,7 +29,7 @@ const Products: React.FC<Props> = ({ }) => {
       </div>
 
       <div className="container mx-auto my-[100px] ">
-        <div className='flex justify-center flex-wrap gap-[20px]'>
+        <div className='flex  flex-wrap gap-[20px]'>
           {products?.data?.map(item => (
             <div key={item.title} className='w-[369px]'>
               <ProductCard  product={item} />

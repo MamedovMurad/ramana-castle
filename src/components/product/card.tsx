@@ -15,7 +15,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
                 <span className=' cursor-pointer'><Bag /></span>
             </div>
             <div className="relative w-full h-[247px]">
-                <Image src={'/image/Men-Shoes-PNG-Free-Image4.png'} fill alt='test' objectFit='contain'/>
+                <Image src={product.image} fill alt='test' objectFit='contain'/>
             </div>
             <div>
                 <h1 className=' font-bold text-[16px]'>{product.title}</h1>
