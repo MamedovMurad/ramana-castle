@@ -34,8 +34,8 @@ const Header: React.FC<Props> = ({ }) => {
                 <div>
                     <ul className=' hidden md:flex text-[16px] font-bold gap-x-[34px] text-white'>
                         <li>PRODUCTS</li>
-                        <li><Link href={'about'}>ABOUT US</Link></li>
-                        <li><Link href={'contact'}>CONTACT</Link></li>
+                        <li><Link href={'/about'}>ABOUT US</Link></li>
+                        <li><Link href={'/contact'}>CONTACT</Link></li>
                         <li>icons</li>
                     </ul>
                 </div>

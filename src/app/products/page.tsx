@@ -33,7 +33,7 @@ const Products: React.FC<Props> = ({ }) => {
 
           {loading ? Array(8).fill(<div className='w-[369px]'><Skeleton /></div>) : products?.data?.map(item => (
             <div key={item.title} className='w-[369px]'>
-              <Link href={'product/' + item.title}>
+              <Link href={'/product/' + item.title}>
                 <ProductCard product={item} /></Link>
             </div>
           ))}
