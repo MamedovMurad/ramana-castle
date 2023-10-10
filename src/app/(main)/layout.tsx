@@ -1,5 +1,5 @@
 import Header from '@/components/layouts/header'
-import './globals.css'
+import '../globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Footer from '@/components/layouts/footer'
@@ -19,6 +19,7 @@ export default function RootLayout({
 }) {
 
   
+  
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -30,3 +31,5 @@ export default function RootLayout({
     </html>
   )
 }
+
+
