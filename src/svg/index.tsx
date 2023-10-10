@@ -73,6 +73,12 @@ const LeftIcon = () => (
         <path d="M0.46983 5.46967C0.176937 5.76256 0.176937 6.23743 0.46983 6.53033L5.2428 11.3033C5.53569 11.5962 6.01057 11.5962 6.30346 11.3033C6.59635 11.0104 6.59635 10.5355 6.30346 10.2426L2.06082 6L6.30346 1.75736C6.59635 1.46446 6.59635 0.989591 6.30346 0.696698C6.01057 0.403804 5.53569 0.403804 5.2428 0.696698L0.46983 5.46967ZM17.3262 5.25L1.00016 5.25L1.00016 6.75L17.3262 6.75L17.3262 5.25Z" fill="#363636" />
     </svg>
 )
+const SearchIcon = ({width="24", height="26"}) => (
+<svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 24 26" fill="none">
+<circle cx="10.147" cy="10.3824" r="9.39702" stroke="white" stroke-width="1.5"/>
+<path d="M16.2354 17.8242L23 24.5889" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
+)
 export {
     MainLogo,
     LetterIcon,
@@ -83,5 +89,6 @@ export {
     InstagramIcon,
     ArrowBottomIcon,
     RightIcon,
-    LeftIcon
+    LeftIcon,
+    SearchIcon
 }

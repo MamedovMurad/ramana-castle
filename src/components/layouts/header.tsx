@@ -1,5 +1,5 @@
 'use client'
-import { MainLogo } from '@/svg';
+import { MainLogo, SearchIcon } from '@/svg';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import MegaMenu from '../general/megamenu';
@@ -44,14 +44,14 @@ const Header: React.FC<Props> = ({ }) => {
                             <li className=' group/test cursor-pointer py-10 '>
                                 <span>PRODUCTS</span>
                                 <div className=' 
-                                 border-solid border-gray-pale absolute z-10 left-0 top-[106px] w-full  py-0 h-[0] 
+                                 border-solid border-gray-pale absolute z-10 left-0 top-[106px] w-full   h-[0] 
                                  bg-sticky-color opacity-0 group-hover/test:h-full  group-hover/test:opacity-[1] group-hover/test:border-t-[1px] 
-                                 group-hover/test:py-10 transition-all   overflow-hidden group-hover/test:overflow-visible'>
-                                    <div className="container mx-auto">
-                                        <ul className='w-[86%] text-[white] flex gap-x-5 justify-end '>
+                                  transition-all   overflow-hidden group-hover/test:overflow-visible'>
+                                    <div className="container mx-auto h-full">
+                                        <ul className='w-[86%] text-[white] flex gap-x-5 justify-end h-full '>
                                             {
                                                 genders?.data?.map(item => (
-                                                    <li className={local_scop} onMouseOver={() => setlocal_scop("group/" + item.name.toLocaleLowerCase())} key={item.name}>
+                                                    <li className={local_scop +" flex items-center"} onMouseOver={() => setlocal_scop("group/" + item.name.toLocaleLowerCase())} key={item.name}>
                                                        <Link href={'/products?gender='+item.id}>{item.name}</Link>  
                                                         {item.gender_categories?.length > 0 && <MegaMenu scop={item.name} list={item.gender_categories} />}
                                                     </li>
@@ -73,7 +73,7 @@ const Header: React.FC<Props> = ({ }) => {
                             </li>
                             <li className='py-10'><Link href={'/about'}>ABOUT US</Link></li>
                             <li className='py-10'><Link href={'/contact'}>CONTACT</Link></li>
-                            <li className='py-10'>icons</li>
+                            <li className='py-10'><Link href={'/search'}><SearchIcon width='20' height='22'/></Link></li>
                         </ul>
                     </div>
                 </div>

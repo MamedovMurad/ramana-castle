@@ -22,14 +22,13 @@ export default function SecondLayout({
 
 
     return (
-        <html lang="en">
-            <body className={inter.className} suppressHydrationWarning={true}>
+        <>
+            {children}
+        </>
 
-                {children}
 
-            </body>
 
-        </html>
+
     )
 }
 

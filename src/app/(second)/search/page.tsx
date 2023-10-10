@@ -41,7 +41,7 @@ const Search: React.FC<Props> = ({ }) => {
               <ul className=' h-full hidden md:flex text-[16px] font-bold gap-x-[34px] text-white '>
 
 
-                <li className='py-10'>icons</li>
+                <li className='py-10'>{/* icons */}</li>
               </ul>
             </div>
           </div>
