@@ -11,10 +11,10 @@ import { productDetail } from '@/common/model/products';
 
 interface Props {
   data: productDetail,
-  slug:string
+  slug: string
 }
 
-export default function ProductDetail({ data , slug}: Props) {
+export default function ProductDetail({ data, slug }: Props) {
 
 
 
@@ -64,6 +64,26 @@ export default function ProductDetail({ data , slug}: Props) {
             </div>
           </div>
 
+          <div className=' p-14 bg-white mt-6'>
+            <div>
+              <ul>
+                <li>
+                  <p>Product category:</p>
+                  <p>{data.categories?.map(item => item.name).join(', ')}</p>
+                </li>
+                <li className='mt-4'>
+                  <p>Materials:</p>
+                  <p>{data.materials?.map(item => item.name).join(', ')}</p>
+                </li>
+                <li className='mt-4'>
+                  <p>Avaliable sizes:</p>
+                  <p>{data.sizes?.map(item => item.name).join(', ')}</p>
+                </li>
+       
+
+              </ul>
+            </div>
+          </div>
         </div>
 
 
