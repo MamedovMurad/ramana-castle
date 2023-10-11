@@ -48,8 +48,8 @@ const Search: React.FC<Props> = ({ }) => {
         </div>
       </header>
 
-      <main className=' fixed w-full    bg-[url("/image/unsplash_hCG34GSdYTA.e97292d988c36a62e4cb.jpg")] bg-[center_top_-9rem]  bg-no-repeat bg-cover flex items-center' >
-        <div className='backdrop-blur-lg h-screen w-full'>
+      <main  className=' fixed w-full    bg-[url("/image/unsplash_hCG34GSdYTA.e97292d988c36a62e4cb.jpg")] bg-[center_top_-9rem]  bg-no-repeat bg-cover flex items-center' >
+        <div style={{backgroundColor:'rgba(0, 0, 0, 0.25)'}} className='backdrop-blur-lg h-screen w-full'>
           <div className='container mx-auto '>
             {
               genderId&& <SearchComponent id={genderId}/>
