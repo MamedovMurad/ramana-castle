@@ -35,7 +35,7 @@ export default function ProductDetail({ data, slug }: Props) {
               <div className='  p-[30px] bg-white'>
                 <div className=' flex justify-between'>
                   <div><h2 className=' font-bold text-[24px] uppercase'>{data?.title}</h2>
-                    <p className='text-[20px]'>{data.price}</p></div>
+                    <p className='text-[20px]'>{data.price} AZN</p></div>
                   <div className='flex gap-x-[14px]'>
                     <span><LikeIcon /></span>
                     <span><Bag /></span>
