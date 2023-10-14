@@ -19,7 +19,7 @@ const Products: React.FC<Props> = ({ }) => {
   const [material, setMaterial] = useState("")
   const [genders, setGenders] = useState("")
 
-  const { data: products, loading } = useFetchData<{ message: null, data: IProduct[], meta: { total: number } }>(`/filter?page=${page}${categories}${sizes}${material}${genders}`, { page, categories, sizes, genders, material })
+  const { data: products, loading } = useFetchData<{ message: null, data: IProduct[], meta: { total: number , per_page:number} }>(`/filter?page=${page}${categories}${sizes}${material}${genders}`, { page, categories, sizes, genders, material })
 
 
   const handlePage = (page: number) => setpage(page)
@@ -27,6 +27,7 @@ const Products: React.FC<Props> = ({ }) => {
   const handleSizes = (category: string) => { setSizes(category); handlePage(1) }
   const handleMaterial = (category: string) => { setMaterial(category); handlePage(1) }
   const handleGenders = (category: string) => { setGenders(category); handlePage(1) }
+  
 
 
   return (
@@ -54,7 +55,9 @@ const Products: React.FC<Props> = ({ }) => {
         </div>
 
         <div className='mt-[66px]'>
-          <PaginatedItems total={products?.meta.total} handlePage={handlePage} initialPage={page-1}/>
+         {
+          products&& <PaginatedItems total={Math.ceil((products.meta.total)/(products.meta.per_page))} handlePage={handlePage} initialPage={page-1}/>
+         }
         </div>
       </div>
     </main>

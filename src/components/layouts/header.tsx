@@ -32,12 +32,18 @@ const Header: React.FC<Props> = ({ }) => {
 
 
     return (
-        <header className={'fixed  w-full   transition-colors h-[106px] z-10  top-[0px] hover:bg-sticky-color   hover:backdrop-blur-lg ' + (sticky ? ' bg-sticky-color  backdrop-blur-lg' : 'bg-transparent')}>
-            <div className='relative'>
-                <div className={`container mx-auto flex justify-between items-center`}>
-                    <div>
+        <header className={'fixed  w-full   transition-colors h-[55px] md:h-[106px] z-10  top-[0px] md:hover:bg-sticky-color   hover:backdrop-blur-lg ' + (sticky ? '   bg-sticky-color  backdrop-blur-lg' : 'bg-transparent')}>
+            <div className='relative h-full'>
+                <div className={`container mx-auto flex justify-around md:justify-between items-center h-full `}>
+                    <div className='md:block hidden'>
                         <Link href={'/'}><MainLogo /></Link>
 
+                    </div>
+                    <div className='md:hidden block'>
+                        test
+                    </div>
+                    <div className='md:hidden block w-[141px]'>
+                        <Link href={'/'}><MainLogo height='12' width='141' /></Link>
                     </div>
                     <div>
                         <ul className=' h-full hidden md:flex text-[16px] font-bold gap-x-[34px] text-white '>
@@ -51,21 +57,14 @@ const Header: React.FC<Props> = ({ }) => {
                                         <ul className='w-[86%] text-[white] flex gap-x-5 justify-end h-full '>
                                             {
                                                 genders?.data?.map(item => (
-                                                    <li className={local_scop +" flex items-center"} onMouseOver={() => setlocal_scop("group/" + item.name.toLocaleLowerCase())} key={item.name}>
-                                                       <Link href={'/products?gender='+item.id}>{item.name}</Link>  
-                                                        {item.gender_categories?.length > 0 && <MegaMenu scop={item.name} list={item.gender_categories} />}
+                                                    <li className={local_scop + " flex items-center"} onMouseOver={() => setlocal_scop("group/" + item.name.toLocaleLowerCase())} key={item.name}>
+                                                        <Link href={'/products?gender=' + item.id}>{item.name}</Link>
+                                                        {item.gender_categories?.length > 0 && <MegaMenu scop={item.name} list={{ gender: item.id, categories: item.gender_categories }} />}
                                                     </li>
                                                 ))
                                             }
 
-                                            {/*               <li className={local_scop} onMouseOver={() => setlocal_scop("group/woomen")}>
-                                                <span>WOMEN</span>
-                                                <MegaMenu scop="woomen" />
-                                            </li>
-                                            <li className={local_scop} onMouseOver={() => setlocal_scop("group/kids")}>
-                                                <span>KIds</span>
-                                                <MegaMenu scop='kids' />
-                                            </li> */}
+
 
                                         </ul>
                                     </div>
@@ -73,9 +72,14 @@ const Header: React.FC<Props> = ({ }) => {
                             </li>
                             <li className='py-10'><Link href={'/about'}>ABOUT US</Link></li>
                             <li className='py-10'><Link href={'/contact'}>CONTACT</Link></li>
-                            <li className='py-10'><Link href={'/search'}><SearchIcon width='20' height='22'/></Link></li>
+
                         </ul>
+                        <ul className="block md:hidden ">
+                        <li ><Link href={'/search'}><SearchIcon width='20' height='22' /></Link></li>
+                    </ul>
                     </div>
+
+                   
                 </div>
             </div>
         </header>

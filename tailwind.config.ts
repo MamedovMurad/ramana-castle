@@ -43,7 +43,8 @@ const config: Config = {
         'gray-pale':'#5F5F5F',
         'gray':'#DAD9D6',
         'sticky-color':'rgba(17, 17, 17, 0.70)',
-        'drop':'rgba(0, 0, 0, 0.25)'
+        'drop':'rgba(0, 0, 0, 0.25)',
+        'mobile_nav':"#F4F1F0;"
       }
   
     },

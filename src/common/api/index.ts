@@ -52,7 +52,7 @@
         return undefined;
     }
 
-    get<T>(endpoint:string, options = {}) {
+    get<T>(endpoint:string, options:any = {}) {
         return this._fetchJSON<T>(
           endpoint, 
           { 

@@ -14,10 +14,10 @@ interface Props {
 
 const Filter: React.FC<Props> = ({ handleCategories, handleSizes, handleMaterial, handleGenders }) => {
 
-    const handleSelectCateory = (params: { label: string, id: number }[]) => { const new_Array = params?.map(item => "&category_ids[]=" + item.id).join('&'); handleCategories(new_Array) }
-    const handleSize = (params: { label: string, id: number }[]) => { const new_Array = params?.map(item => "&size_ids[]=" + item.id).join('&'); handleSizes(new_Array) }
-    const hadnleMaterials = (params: { label: string, id: number }[]) => { const new_Array = params?.map(item => "&material_ids[]=" + item.id).join('&'); handleMaterial(new_Array) }
-    const handleGender = (params: { label: string, id: number }[]) => { const new_Array = params?.map(item => "&gender_ids[]=" + item.id).join('&'); handleGenders(new_Array) }
+    const handleSelectCateory = (params: { label: string, id: number }[]|[]) => { const new_Array = params?.map(item => "&category_ids[]=" + item.id).join('&'); handleCategories(new_Array) }
+    const handleSize = (params: { label: string, id: number }[]|[]) => { const new_Array = params?.map(item => "&size_ids[]=" + item.id).join('&'); handleSizes(new_Array) }
+    const hadnleMaterials = (params: { label: string, id: number }[]|[]) => { const new_Array = params?.map(item => "&material_ids[]=" + item.id).join('&'); handleMaterial(new_Array) }
+    const handleGender = (params: { label: string, id: number }[]|[]) => { const new_Array = params?.map(item => "&gender_ids[]=" + item.id).join('&'); handleGenders(new_Array) }
     const { data: categories, loading } = useFetchData<{ message: null, data: categoryWIthSub[] }>('/kateqoriyalar')
     const { data: sizes, loading: sizeLoading } = useFetchData<{ message: null, data: { id: number, name: string }[] }>('/olculer')
     const { data: materials, loading: materialLoad } = useFetchData<{ message: null, data: { id: number, name: string }[] }>('/materiallar')

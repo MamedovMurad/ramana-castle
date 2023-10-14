@@ -1,12 +1,16 @@
+import { api } from '@/common/api';
+import { IContact } from '@/common/model/products';
 import ContactForm from '@/components/contactForm';
 import { InstagramIcon, LinkedinIcon } from '@/svg';
+import Link from 'next/link';
 import React from 'react';
 
 interface Props {
 
 }
 
-const Contact: React.FC<Props> = ({ }) => {
+const Contact: React.FC<Props> = async ({ }) => {
+    const data = await getData()
 
     return (
         <main>
@@ -26,27 +30,27 @@ const Contact: React.FC<Props> = ({ }) => {
                         <h1 className='text-[36px] font-semibold'>OUR CONTACTS </h1>
                         <div className='mt-5'>
                             <p className='text-[16px] text-gray-pale'>Ünvan</p>
-                            <p className='text-[16px] text-gray-pale'> Aşıq Molla Cümə 44, Bakı, Azerbaycan</p>
+                            <p className='text-[16px] text-gray-pale'> {data?.data.address}</p>
                         </div>
                         <div className='mt-5'>
                             <p className='text-[16px] text-gray-pale'> Bizimlə əlaqə </p>
-                            <p className='text-[16px] text-gray-pale'> Nömrə : +99412 310 52 04 / 05</p>
-                            <p className='text-[16px] text-gray-pale'>elefon: +99455 310 52 04 / 05</p>
+                            <p className='text-[16px] text-gray-pale'> Nömrə : {data?.data.phone_1}</p>
+                            <p className='text-[16px] text-gray-pale'>elefon: {data?.data.phone_2}</p>
                         </div>
                         <div className='mt-5'>
                             <p className='text-[16px] text-gray-pale'> E-Poçt adresi</p>
-                            <p className='text-[16px] text-gray-pale'> info@ramana.az</p>
+                            <p className='text-[16px] text-gray-pale'> {data?.data.email}</p>
                         </div>
                         <div className='mt-5'>
                             <p className='text-[16px] text-gray-pale'> İş vaxtları</p>
-                            <p className='text-[16px] text-gray-pale'> Həftəiçi : 09:00 - 18:00 </p>
-                            <p className='text-[16px] text-gray-pale'>Həftəsonu : 10:00 - 21:00</p>
+                            <p className='text-[16px] text-gray-pale'> Həftəiçi : {data?.data.weekdays} </p>
+                            <p className='text-[16px] text-gray-pale'>Həftəsonu : {data?.data.weekend}</p>
                         </div>
                         <div className='mt-5'>
                             <p className='text-[16px] text-gray-pale'>Sosial mediayada biz:</p>
                             <div className="flex gap-x-1 mt-2">
-                                <span><LinkedinIcon color='#363636' /></span>
-                                <span><InstagramIcon color='#363636' /></span>
+                                <span><Link href={data?.data.linkedin || "#"}><LinkedinIcon color='#363636' /></Link></span>
+                                <span><Link href={data?.data.instagram || "#"}><InstagramIcon color='#363636' /></Link></span>
                             </div>
                         </div>
 
@@ -64,3 +68,16 @@ const Contact: React.FC<Props> = ({ }) => {
 };
 
 export default Contact;
+
+
+async function getData() {
+
+    const res = await api.get<{ data: IContact }>("/elaqe",{ cache: 'force-cache' })
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+
+
+
+
+    return res
+}

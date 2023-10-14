@@ -1,5 +1,5 @@
 export interface IProduct {
-        "id":number
+        "id": number
         "name": string,
         "title": string,
         "description": string,
@@ -60,4 +60,17 @@ export interface productDetail {
                 "name": string
         }[]
 
+}
+
+export interface IContact {
+        "address": string,
+        "phone_1": string,
+        "phone_2": string,
+        "weekdays": string,
+        "weekend": string,
+        "email": string,
+        "instagram": string,
+        "facebook": string,
+        "tiktok": string,
+        "linkedin": string
 }

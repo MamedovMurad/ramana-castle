@@ -2,15 +2,17 @@
 "use client"
 import { ArrowBottomIcon } from '@/svg';
 import React, { useState, useEffect, useRef } from 'react';
-import { useSearchParams, useRouter  } from 'next/navigation'
+import { useSearchParams, useRouter } from 'next/navigation'
 interface CustomDropdownProps {
     options: { label: string, id: number }[];
-    onSelect: (selectedOptions: { label: string, id: number }[]) => void;
+    onSelect: (selectedOptions: { label: string, id: number }[]|[]) => void;
     def: string
 }
 
 const CustomDropdown: React.FC<CustomDropdownProps> = ({ def, options, onSelect }) => {
     const searchParams = useSearchParams()
+
+    
     const router = useRouter()
 
     const [isOpen, setIsOpen] = useState(false);
@@ -35,31 +37,56 @@ const CustomDropdown: React.FC<CustomDropdownProps> = ({ def, options, onSelect 
         setIsOpen(!isOpen);
     };
 
-    const handleOptionToggle = (option: { label: string, id: number }, force?: boolean) => {
-           
-        if (force) {
-            setSelectedOptions([option]);
-            onSelect([option]);
-        }
-        else if (selectedOptions.map(e => e.label).includes(option.label)) {
-            router.replace("/products",{ scroll: false })
+    const handleOptionToggle = (option: { label: string, id: number }) => {
+
+
+        if (selectedOptions.map(e => e.label).includes(option.label)) {
+            router.replace("/products", { scroll: false })
             setSelectedOptions(selectedOptions.filter((item) => item.label !== option.label));
             onSelect(selectedOptions.filter((item) => item.label !== option.label))
 
         } else {
-            router.replace("/products",{ scroll: false })
+            router.replace("/products", { scroll: false })
             setSelectedOptions([...selectedOptions, option]);
             onSelect([...selectedOptions, option]);
         }
     };
 
+    const handleDefaultChoose = (obje: { label: string, id: number }) => {
+      
+        setSelectedOptions([obje]);
+        onSelect([obje]);
+
+    }
     useEffect(() => {
-        if (searchParams.get('gender') && options) {
-            const findOPtion = options.find(item => item.id === Number(searchParams.get('gender')))
-            findOPtion && handleOptionToggle(findOPtion, true)
+        setSelectedOptions([])
+        onSelect([])
+        if ((searchParams.get('gender') || searchParams.get('category')) && options) {
+
+            const newObject = options.find(item => (item.id === Number(searchParams.get('gender'))))
+
+           
+            newObject && handleDefaultChoose(newObject)
+
+            if (searchParams.get('category')) {
+                const cat = options.find(item => (item.id === Number(searchParams.get('category'))))
+                cat && handleDefaultChoose(cat)
+            } if (searchParams.get('size')) {
+                const cat = options.find(item => (item.id === Number(searchParams.get('size'))))
+                cat && handleDefaultChoose(cat)
+            } if (searchParams.get('material')) {
+                const cat = options.find(item => (item.id === Number(searchParams.get('material'))))
+                cat && handleDefaultChoose(cat)
+            }
+            
+
+
         }
         /*  */
-    }, [searchParams.get('gender')])
+    }, [
+        searchParams.get('gender'), searchParams.get('category'),
+        searchParams.get('material'), searchParams.get('size')
+    ])
 
     const handleApplySelection = () => {
         onSelect(selectedOptions);

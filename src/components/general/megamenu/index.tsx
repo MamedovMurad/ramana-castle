@@ -1,10 +1,11 @@
 "use client"
 import { categoryWIthSub } from '@/common/model/products';
+import Link from 'next/link';
 import React from 'react';
 
 interface Props {
   scop: 'Men' | 'Famale' | 'Kids',
-  list: categoryWIthSub[]
+  list: { gender: number; categories: categoryWIthSub[] }
 }
 
 const MegaMenu: React.FC<Props> = ({ scop, list }) => {
@@ -24,9 +25,11 @@ const MegaMenu: React.FC<Props> = ({ scop, list }) => {
     <div className={local_const[scop]}>
       <div className=' px-[30px] py-[0px] flex justify-between text-[15.5px] font-normal'>
         {
-          list.map(item => (
+          list.categories.map(item => (
             <ul key={item.name + item.title + item.description}>
-              <li className='py-[9px] font-bold uppercase'>{item.name}</li>
+              <li className='py-[9px] font-bold uppercase'>
+                <Link href={'/products?gender='+list.gender+'&category='+item.id}>{item.name}</Link>
+              </li>
               {item.subcategory?.map((item, index: number) => (
                 <li key={index} className='py-[5px] mt-[12px]'>{item.name}</li>
               ))}
