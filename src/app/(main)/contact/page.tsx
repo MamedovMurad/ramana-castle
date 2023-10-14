@@ -13,21 +13,21 @@ const Contact: React.FC<Props> = async ({ }) => {
     const data = await getData()
 
     return (
-        <main>
+        <main className=' bg-mobile_nav '>
 
 
-            <div className='h-[500px]  bg-[url("/image/contact.jpg")] bg-[center]  bg-no-repeat bg-cover flex items-center' >
-                <div className='container mx-auto flex  flex-col items-center md:block'>
+            <div className='md:h-[500px] h-[145px]  bg-[url("/image/contact.jpg")] bg-[center]  bg-no-repeat bg-cover flex items-center' >
+                <div className='container mx-auto   flex-col items-center md:block hidden'>
                     <h1 className='w-[230px] md:w-[550px] text-[48px] text-white leading-[3rem]  md:leading-[100px] md:text-[100px]'>
                         GET IN TOUCH
                     </h1>
 
                 </div>
             </div>
-            <div className="container mx-auto my-[100px]">
-                <div className='flex'>
+            <div className="container mx-auto md:my-[100px] mt-4 px-5 md:px-0  py-5 md:py-0">
+                <div className='md:flex'>
                     <div className='flex-1'>
-                        <h1 className='text-[36px] font-semibold'>OUR CONTACTS </h1>
+                        <h1 className='md:text-[36px] text-[20px] font-bold md:text-left text-center '>OUR CONTACTS </h1>
                         <div className='mt-5'>
                             <p className='text-[16px] text-gray-pale'>Ünvan</p>
                             <p className='text-[16px] text-gray-pale'> {data?.data.address}</p>
@@ -55,10 +55,10 @@ const Contact: React.FC<Props> = async ({ }) => {
                         </div>
 
                         <div className=' mt-9'>
-                            <button type='submit' className=' px-20 py-3 border-[1.5px] border-black border-solid uppercase '>OUR Branches</button>
+                            <button type='submit' className=' hidden md:block px-20 py-3 border-[1.5px] border-black border-solid uppercase '>OUR Branches</button>
                         </div>
                     </div>
-                    <div className='flex-1'>
+                    <div className='flex-1 '>
                         <ContactForm />
                     </div>
                 </div>

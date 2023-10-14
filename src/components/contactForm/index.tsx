@@ -40,20 +40,20 @@ const ContactForm: React.FC<Props> = ({ }) => {
        
             <div>
 
-                <input type="text" name="name" id="fullname" onChange={handleChange} onBlur={() => handleOnBLur("name")} />
+                <input type="text" name="name" id="fullname" onChange={handleChange} onBlur={() => handleOnBLur("name")} className=' bg-transparent' />
                 <label className={'uppercase ' + (fields.name ? 'top-[-20px] ' : 'top-0') + (errors1.find(item => item === "name") ? " text-red-700" : "")} htmlFor="fullname">FUll Name</label>
 
             </div>
             <div className='mt-10'>
 
-                <input type="text" name="email" id="email" onChange={handleChange} onBlur={() => handleOnBLur("email")} />
+                <input type="text" name="email" id="email" onChange={handleChange} onBlur={() => handleOnBLur("email")} className=' bg-transparent'/>
                 <label htmlFor="email" className={'uppercase ' + (fields.email ? 'top-[-20px] ' : 'top-0') + (errors1.find(item => item === "email") ? " text-red-700" : "")} >Email ADDress</label>
 
             </div>
             <div className='mt-10'>
 
                 <label htmlFor="msg" className={' text-[16px] font-bold'} >Your Message</label>
-                <textarea className='mt-1 p-2 w-full block outline-none border-[1.5px] border-black border-solid' name="msg" id="msg" onChange={handleChange} cols={30} rows={10}></textarea>
+                <textarea className='mt-1 p-2 w-full block outline-none border-[1.5px] border-black border-solid bg-transparent' name="msg" id="msg" onChange={handleChange} cols={30} rows={10}></textarea>
 
 
             </div>
