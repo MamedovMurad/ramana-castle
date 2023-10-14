@@ -72,7 +72,7 @@ export default Contact;
 
 async function getData() {
 
-    const res = await api.get<{ data: IContact }>("/elaqe",{ cache: 'force-cache' })
+    const res = await api.get<{ data: IContact }>("/elaqe",{ cache: 'no-store' })
     // The return value is *not* serialized
     // You can return Date, Map, Set, etc.
 

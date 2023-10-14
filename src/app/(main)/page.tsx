@@ -60,7 +60,7 @@ async function getData() {
       link_title_1: string,
       link_title_2: string
     }[]
-  }>("",{ cache: 'force-cache' })
+  }>("",{ cache: 'no-store' })
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
 

@@ -33,7 +33,7 @@ const AboutUs: React.FC<Props> = async ({ }) => {
                     </div>
                 </div>
             </div>
-            <div className='md:h-[460px] md:py-0 py-5  bg-[url("/image/contact2.jpg")]  bg-[top]  bg-no-repeat bg-cover flex items-center' >
+            <div className=' py-7  bg-[url("/image/contact2.jpg")]  bg-[top]  bg-no-repeat bg-cover flex items-center' >
                 <div className="container mx-auto">
                     <div className="md:px-20 px-5">
                         <div >
@@ -62,7 +62,7 @@ async function getData() {
             "description_2": string,
             "image": string
         }
-    }>("/haqqimizda")
+    }>("/haqqimizda", { cache: 'no-store' })
     // The return value is *not* serialized
     // You can return Date, Map, Set, etc.
 
