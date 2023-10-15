@@ -27,7 +27,7 @@ if (!products?.data) {
         <CarouselCopmonent>
             {
                 products?.data?.map(item => (
-                    <div className='bg-white px-[7px]' key={item.id}>
+                    <div className=' bg-mobile_nav md:px-[7px] px-1' key={item.id}>
                         <Link href={"/product/" + item.slug}>
                             <ProductCard product={item} /></Link>
 

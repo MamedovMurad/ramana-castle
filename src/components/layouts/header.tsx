@@ -1,5 +1,5 @@
 'use client'
-import { MainLogo, SearchIcon } from '@/svg';
+import { BurgerIcon, MainLogo, SearchIcon } from '@/svg';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import MegaMenu from '../general/megamenu';
@@ -32,7 +32,7 @@ const Header: React.FC<Props> = ({ }) => {
 
 
     return (
-        <header className={'fixed  w-full   transition-colors h-[55px] md:h-[106px] z-10  top-[0px] md:hover:bg-sticky-color   hover:backdrop-blur-lg ' + (sticky ? '   bg-sticky-color  backdrop-blur-lg' : 'bg-transparent')}>
+        <header className={'fixed  w-full border-b-[1.5px] border-black md:border-none   transition-colors h-[55px] md:h-[106px] z-10  top-[0px] md:hover:bg-sticky-color   hover:backdrop-blur-lg ' + (sticky ? ' bg-mobile_nav     md:bg-sticky-color  backdrop-blur-lg' : 'bg-transparent')}>
             <div className='relative h-full'>
                 <div className={`container mx-auto flex justify-around md:justify-between items-center h-full `}>
                     <div className='md:block hidden'>
@@ -40,10 +40,10 @@ const Header: React.FC<Props> = ({ }) => {
 
                     </div>
                     <div className='md:hidden block'>
-                        test
+                        <BurgerIcon/>
                     </div>
                     <div className='md:hidden block w-[141px]'>
-                        <Link href={'/'}><MainLogo height='12' width='141' /></Link>
+                        <Link href={'/'}><MainLogo height='12' width='141' color='#363636' /></Link>
                     </div>
                     <div>
                         <ul className=' h-full hidden md:flex text-[16px] font-bold gap-x-[34px] text-white '>
@@ -75,7 +75,7 @@ const Header: React.FC<Props> = ({ }) => {
 
                         </ul>
                         <ul className="block md:hidden ">
-                        <li ><Link href={'/search'}><SearchIcon width='20' height='22' /></Link></li>
+                        <li ><Link href={'/search'}><SearchIcon width='20' height='22' color='#363636' /></Link></li>
                     </ul>
                     </div>
 

@@ -31,23 +31,23 @@ const Products: React.FC<Props> = ({ }) => {
 
 
   return (
-    <main>
+    <main className=' bg-mobile_nav'>
 
 
-      <div className='h-[540px]  bg-[url("/image/unsplash_hCG34GSdYTA.png")]   bg-no-repeat bg-cover flex items-center' >
-        <div className='container mx-auto flex  flex-col items-center md:block'>
+      <div className='md:h-[540px]  h-[145px]   bg-[url("/image/unsplash_hCG34GSdYTA.png")]   bg-no-repeat bg-cover flex items-center' >
+        <div className='container mx-auto   flex-col items-center md:block hidden'>
           <h1 className='w-[230px] md:w-[550px] text-[48px] text-white leading-[3rem]  md:leading-[100px] md:text-[100px]'>MEN’S
             FOOTWEAR</h1>
 
         </div>
       </div>
 
-      <div className="container mx-auto my-[100px] ">
+      <div className="container mx-auto md:mt-[100px] pb-8 mt-3">
         <Filter handleCategories={handleCategories} handleSizes={handleSizes} handleMaterial={handleMaterial} handleGenders={handleGenders} />
-        <div className='flex  flex-wrap gap-[20px]'>
+        <div className='flex  flex-wrap md:gap-[20px] gap-[10px]  md:pl-0 pl-5'>
 
-          {loading ? Array(8).fill(<div className='w-[369px]'><Skeleton /></div>) : products?.data?.map(item => (
-            <div key={item.title} className='w-[369px]'>
+          {loading ? Array(8).fill(<div className=' w-[46%] md:w-[369px]'><Skeleton /></div>) : products?.data?.map(item => (
+            <div key={item.title} className=' w-[46%] md:w-[369px]'>
               <Link href={'/product/' + item.slug}>
                 <ProductCard product={item} /></Link>
             </div>
