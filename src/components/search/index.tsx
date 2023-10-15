@@ -26,7 +26,7 @@ const SearchComponent: React.FC<Props> = ({ id }) => {
       </div>
 
       <div className='mt-[60px] text-white text-[16px]  uppercase font-light'>
-        <ul className='flex flex-col flex-wrap h-[370px] justify-start gap-[15px] '>
+        <ul className=' flex flex-col md:flex-wrap md:h-[370px] justify-start gap-[15px]   '>
           {loading && <div className='w-full flex items-center justify-center'><Spinner /></div>}
           {
             data?.data && data.data.map(item => (

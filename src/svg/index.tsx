@@ -90,11 +90,11 @@ const FilterIcon = () => (
         <path d="M3 10V14" stroke="#363636" stroke-width="1.5" />
     </svg>
 )
-const BurgerIcon = () => (
+const BurgerIcon = ({color="#363636"}) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
-        <path d="M12.5 1.57227H0" stroke="#363636" stroke-width="1.5" />
-        <path d="M12.5 11.5723H0" stroke="#363636" stroke-width="1.5" />
-        <path d="M12.5 6.57227H0" stroke="#363636" stroke-width="1.5" />
+        <path d="M12.5 1.57227H0" stroke={color} stroke-width="1.5" />
+        <path d="M12.5 11.5723H0" stroke={color} stroke-width="1.5" />
+        <path d="M12.5 6.57227H0" stroke={color} stroke-width="1.5" />
     </svg>
 )
 export {

@@ -46,7 +46,7 @@ const Header: React.FC<Props> = ({ }) => {
                         <Link href={'/'}><MainLogo height='12' width='141' color='#363636' /></Link>
                     </div>
                     <div>
-                        <ul className=' h-full hidden md:flex text-[16px] font-bold gap-x-[34px] text-white '>
+                        <ul className=' h-full hidden md:flex text-[16px] font-bold gap-x-[34px] text-white  items-center'>
                             <li className=' group/test cursor-pointer py-10 '>
                                 <span>PRODUCTS</span>
                                 <div className=' 
@@ -72,11 +72,12 @@ const Header: React.FC<Props> = ({ }) => {
                             </li>
                             <li className='py-10'><Link href={'/about'}>ABOUT US</Link></li>
                             <li className='py-10'><Link href={'/contact'}>CONTACT</Link></li>
-
+                            <li ><Link href={'/search'}><SearchIcon /></Link></li>
                         </ul>
                         <ul className="block md:hidden ">
                         <li ><Link href={'/search'}><SearchIcon width='20' height='22' color='#363636' /></Link></li>
                     </ul>
+                    
                     </div>
 
                    
