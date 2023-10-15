@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import MegaMenu from '../general/megamenu';
 import { useFetchData } from '@/hooks/useFetchData';
 import { IGenderWithCategory } from '@/common/model/products';
+import Burger from '../burger';
 
 interface Props {
 
@@ -32,7 +33,7 @@ const Header: React.FC<Props> = ({ }) => {
 
 
     return (
-        <header className={'fixed  w-full border-b-[1.5px] border-black md:border-none   transition-colors h-[55px] md:h-[106px] z-10  top-[0px] md:hover:bg-sticky-color   hover:backdrop-blur-lg ' + (sticky ? ' bg-mobile_nav     md:bg-sticky-color  backdrop-blur-lg' : 'bg-transparent')}>
+        <header className={'fixed  w-full   border-b-[1.5px] border-black md:border-none   transition-colors h-[55px] md:h-[106px] z-10  top-[0px] md:hover:bg-sticky-color   hover:backdrop-blur-lg ' + (sticky ? ' bg-mobile_nav     md:bg-sticky-color  backdrop-blur-lg' : ' bg-mobile_nav md:bg-transparent')}>
             <div className='relative h-full'>
                 <div className={`container mx-auto flex justify-around md:justify-between items-center h-full `}>
                     <div className='md:block hidden'>
@@ -40,7 +41,7 @@ const Header: React.FC<Props> = ({ }) => {
 
                     </div>
                     <div className='md:hidden block'>
-                        <BurgerIcon/>
+                       <Burger data={genders?.data}/>
                     </div>
                     <div className='md:hidden block w-[141px]'>
                         <Link href={'/'}><MainLogo height='12' width='141' color='#363636' /></Link>
