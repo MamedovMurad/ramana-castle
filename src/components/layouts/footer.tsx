@@ -16,7 +16,7 @@ const Footer: React.FC<Props> = ({ }) => {
                     <li className='mt-[10px] md:mt-0'><Link href={'/products'}>PRODUCTS</Link></li>
                     <li className='mt-[10px] md:mt-0'> <Link href={'/about'}>ABOUT US</Link></li>
                     <li className='mt-[10px] md:mt-0'> <Link href={'/contact'}>CONTACT</Link></li>
-                    <li className='mt-[10px] md:mt-0'>CONTACT</li>
+                  
                 
                 </ul>
                 <div className=' flex gap-x-2 md:mt-0 mt-[48px]'><InstagramIcon /> <LinkedinIcon /></div>

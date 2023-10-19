@@ -9,10 +9,11 @@ import { usePathname } from 'next/navigation'
 
 
 interface Props {
-    data?: IGenderWithCategory[]
+    data?: IGenderWithCategory[],
+    color?:string
 }
 
-const Burger: React.FC<Props> = ({ data }) => {
+const Burger: React.FC<Props> = ({ data, color }) => {
     const pathname = usePathname()
     console.log(pathname,'params');
     
@@ -27,7 +28,7 @@ const Burger: React.FC<Props> = ({ data }) => {
     
     return (
         <section >
-            <span className="cursor-pointer " onClick={() => setactive(!active)}> <BurgerIcon /></span>
+            <span className="cursor-pointer " onClick={() => setactive(!active)}> <BurgerIcon  color={color}/></span>
             {
                 active &&
                 <div className='absolute top-[53px]  h-[94vh]  w-full bg-mobile_nav left-0  text-center flex flex-col justify-between'>

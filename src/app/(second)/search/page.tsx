@@ -1,6 +1,7 @@
 "use client"
 
 import { IGenderWithCategory } from '@/common/model/products';
+import Burger from '@/components/burger';
 import SearchComponent from '@/components/search';
 import { useFetchData } from '@/hooks/useFetchData';
 import { BurgerIcon, MainLogo } from '@/svg';
@@ -25,7 +26,7 @@ const Search: React.FC<Props> = ({ }) => {
         <div className='relative'>
           <div className={`container mx-auto md:flex justify-between items-center md:p-0 p-5`}>
             <div className='flex md:block justify-between'>
-              <div className=' cursor-pointer md:hidden'><BurgerIcon  color='white'/></div>
+              <div className=' cursor-pointer md:hidden'> <Burger data={genders?.data} color="white"/></div>
               <Link href={'/'}><MainLogo /></Link>
               <div className='md-hidden'></div>
             </div>
