@@ -1,13 +1,20 @@
+"use client"
 import { InstagramIcon, LinkedinIcon, MainLogo } from '@/svg';
 import React from 'react';
 import Subscription from '../general/subscription';
 import Link from 'next/link';
+import { useFetchData } from '@/hooks/useFetchData';
+import { IContact } from '@/common/model/products';
 
 interface Props {
 
 }
 
 const Footer: React.FC<Props> = ({ }) => {
+    const { data: contact, loading } = useFetchData< {data: IContact[]} >(`/contact`)
+    console.log(contact,'contact');
+    
+
     return (
         <footer className=' bg-black md:h-[262px] '>
             <div className=' container mx-auto flex flex-col justify-center md:flex-row md:justify-between items-center text-white border-b-[1.5px]  border-gray-pale py-[41px]'>
@@ -19,7 +26,11 @@ const Footer: React.FC<Props> = ({ }) => {
                   
                 
                 </ul>
-                <div className=' flex gap-x-2 md:mt-0 mt-[48px]'><InstagramIcon /> <LinkedinIcon /></div>
+                <div className=' flex gap-x-2 md:mt-0 mt-[48px]'>
+                 <a href={contact?.data[0].instagram||""}>   <InstagramIcon /> </a>
+                 <a href={contact?.data[0].linkedin||""}>    <LinkedinIcon /> </a>
+                  
+                </div>
             </div>
             <div className='md:flex  justify-between items-center md:mt-[47px] container mx-auto  text-center md:text-left py-[17px] md:py-0'>
 

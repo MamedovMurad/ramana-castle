@@ -37,8 +37,8 @@ export default function ProductDetail({ data, slug }: Props) {
                   <div><h2 className=' font-bold md:text-[24px] uppercase text-[14px]'>{data?.title}</h2>
                     <p className='md:text-[20px] text-[14px]'>{data.price} AZN</p></div>
                   <div className='flex gap-x-[14px]'>
-                    <span><LikeIcon /></span>
-                    <span><Bag /></span>
+               {/*      <span><LikeIcon /></span>
+                    <span><Bag /></span> */}
                   </div>
                 </div>
 

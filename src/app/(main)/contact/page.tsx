@@ -55,8 +55,8 @@ const Contact: React.FC<Props> = async ({ }) => {
                         </div>
 
                         <div className=' mt-9'>
-                            <button type='submit' className=' hidden md:block px-20 py-3 border-[1.5px] border-black border-solid uppercase '>OUR Branches</button>
-                        </div>
+{/*                             <button type='submit' className=' hidden md:block px-20 py-3 border-[1.5px] border-black border-solid uppercase '>OUR Branches</button>
+ */}                        </div>
                     </div>
                     <div className='flex-1 '>
                         <ContactForm />
