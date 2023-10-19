@@ -27,7 +27,7 @@ const Contact: React.FC<Props> = async ({ }) => {
             <div className="container mx-auto md:my-[100px] mt-4 px-5 md:px-0  py-5 md:py-0">
                 <div className='md:flex'>
                     <div className='flex-1'>
-                        <h1 className='md:text-[36px] text-[20px] font-bold md:text-left text-center '>OUR CONTACTS </h1>
+                        <h1 className='md:text-[36px] text-[20px] font-bold md:text-left text-center '>{/* OUR CONTACTS  */}</h1>
                         <div className='mt-5'>
                             <p className='text-[16px] text-gray-pale'>Ünvan</p>
                             <p className='text-[16px] text-gray-pale'> {data?.data.address}</p>

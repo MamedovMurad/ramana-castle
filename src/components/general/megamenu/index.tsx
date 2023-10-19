@@ -31,7 +31,9 @@ const MegaMenu: React.FC<Props> = ({ scop, list }) => {
                 <Link href={'/products?gender='+list.gender+'&category='+item.id}>{item.name}</Link>
               </li>
               {item.subcategory?.map((item, index: number) => (
-                <li key={index} className='py-[5px] mt-[12px]'>{item.name}</li>
+                <li key={index} className='py-[5px] mt-[12px]'>
+                  <Link href={'/products?gender='+list.gender+'&category='+item.id}>{item.name}</Link>
+                  </li>
               ))}
 
 
