@@ -101,7 +101,7 @@ const CustomDropdown: React.FC<CustomDropdownProps> = ({ def, options, onSelect 
                     : def} <ArrowBottomIcon />
             </div>
             {isOpen && (
-                <ul className="dropdown-options absolute z-10 top-10 bg-drop  backdrop-blur-lg p-5
+                <ul className="dropdown-options absolute z-10 md:top-10 top-8 bg-drop  backdrop-blur-lg p-5
                  text-white text-[16px] font-normal flex flex-col gap-y-5">
                     {options.map((option) => (
                         <li key={option.id}>

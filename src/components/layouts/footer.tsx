@@ -1,6 +1,7 @@
 import { InstagramIcon, LinkedinIcon, MainLogo } from '@/svg';
 import React from 'react';
 import Subscription from '../general/subscription';
+import Link from 'next/link';
 
 interface Props {
 
@@ -12,11 +13,11 @@ const Footer: React.FC<Props> = ({ }) => {
             <div className=' container mx-auto flex flex-col justify-center md:flex-row md:justify-between items-center text-white border-b-[1.5px]  border-gray-pale py-[41px]'>
                 <div><MainLogo /></div>
                 <ul className='md:flex md:gap-x-[35px] font-normal text-[16px] items-center md:mt-0 mt-[41px]'>
-                    <li className='mt-[10px] md:mt-0'>PRODUCTS</li>
-                    <li className='mt-[10px] md:mt-0'>ABOUT US</li>
+                    <li className='mt-[10px] md:mt-0'><Link href={'/products'}>PRODUCTS</Link></li>
+                    <li className='mt-[10px] md:mt-0'> <Link href={'/about'}>ABOUT US</Link></li>
+                    <li className='mt-[10px] md:mt-0'> <Link href={'/contact'}>CONTACT</Link></li>
                     <li className='mt-[10px] md:mt-0'>CONTACT</li>
-                    {/*  <li>branches</li>
-                    <li>faq</li> */}
+                
                 </ul>
                 <div className=' flex gap-x-2 md:mt-0 mt-[48px]'><InstagramIcon /> <LinkedinIcon /></div>
             </div>
