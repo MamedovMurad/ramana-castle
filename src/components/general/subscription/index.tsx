@@ -1,3 +1,4 @@
+"use client";
 import { ArrowIcon, LetterIcon } from "@/svg";
 import Router from "next/router";
 import React, { ReactNode } from "react";
